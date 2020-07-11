@@ -8,13 +8,11 @@
     </router-link>
   </header>
 </template>
-
 <script>
 export default {
   name: "Header"
 };
 </script>
-
 <style lang="scss" scoped>
 .header {
   width: 100%;
@@ -57,6 +55,4 @@ export default {
     color: #222;
   }
 }
-
-
 </style>
