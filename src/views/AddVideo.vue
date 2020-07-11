@@ -51,7 +51,7 @@ export default {
     return {
       title: "",
       url_video: "",
-      description: ""
+      description: "",
     };
   },
   methods: {
@@ -62,17 +62,17 @@ export default {
         body: JSON.stringify({
           title: this.title,
           url_video: this.url_video,
-          description: this.description
+          description: this.description,
         }),
         headers: {
-          "Content-type": "application/json; charset=UTF-8"
-        }
-      })
-        .then(response => { response.json();})
-        .then(videoCreate =>{ console.log(videoCreate);});
-      this.$router.push( "/" );
-    }
-  }
+          "Content-type": "application/json; charset=UTF-8",
+        },
+      }).then((response) => {
+        response.json();
+      });
+      this.$router.push("/");
+    },
+  },
 };
 </script>
 
@@ -146,6 +146,4 @@ export default {
     font-weight: normal;
   }
 }
-
-
 </style>
