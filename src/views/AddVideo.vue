@@ -35,9 +35,9 @@
         </div>
         <div class="buttons-actions">
           <button class="btn btn-primary" type="submit">Agregar</button>
-          <a href="./index.html" class="btn btn-secondary">
+          <router-link to="/" class="btn btn-secondary">
             Cancelar
-          </a>
+          </router-link>
         </div>
       </form>
     </div>
@@ -65,10 +65,10 @@ export default {
           description: this.description
         }),
         headers: {
-          "Content-type": "application/json; charset=UTF-8",
+          "Content-type": "application/json; charset=UTF-8"
         }
       })
-        .then(response => {response.json();})
+        .then(response => { response.json();})
         .then(videoCreate =>{ console.log(videoCreate);});
       this.$router.push( "/" );
     }

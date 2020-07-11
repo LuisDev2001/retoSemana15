@@ -23,7 +23,7 @@ const routes = [
       import(/* webpackChunkName: "AddVideo" */ "../views/DetailVideo.vue")
   },
   {
-    path: "/EditVideo",
+    path: "/EditVideo/:id",
     name: "EditVideo",
     component: () =>
       import(/* webpackChunkName: "AddVideo" */ "../views/EditVideo.vue")

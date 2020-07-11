@@ -3,7 +3,7 @@
   <section class="edit-video">
     <div>
       <h2 class="edit-video-title">Editar video</h2>
-      <form class="edit-video-form">
+      <form class="edit-video-form" @submit.prevent="submitEditVideo">
         <div>
           <input
             class="edit-video-input title"
@@ -36,9 +36,9 @@
 
         <div class="buttons-actions">
           <button class="btn btn-primary" type="submit">Guardar</button>
-          <a href="./index.html" class="btn btn-secondary">
+          <router-link to="/">
             Cancelar
-          </a>
+          </router-link>
         </div>
       </form>
     </div>
@@ -63,18 +63,19 @@ export default {
         body: JSON.stringify({
           title: this.editTitle,
           url_video: this.editUrl_video,
-          description: this.editDescription,
+          description: this.editDescription
         }),
         headers: {
-          "Content-type": "application/json; charset=UTF-8",
-        },
+          "Content-type": "application/json; charset=UTF-8"
+        }
       })
-        .then( (response) =>{
+        .then(response => {
           return response.json();
         })
-        .then( (videoEdited) => {
+        .then(videoEdited => {
           return console.log(videoEdited);
         });
+      this.$router.push("/");
     }
   }
 };
