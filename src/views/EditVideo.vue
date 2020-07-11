@@ -36,7 +36,7 @@
 
         <div class="buttons-actions">
           <button class="btn btn-primary" type="submit">Guardar</button>
-          <router-link to="/">
+          <router-link to="/" class="btn btn-secondary">
             Cancelar
           </router-link>
         </div>
