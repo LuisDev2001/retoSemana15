@@ -42,6 +42,7 @@
         </div>
       </form>
     </div>
+    {{ con() }}
   </section>
 </template>
 
@@ -57,6 +58,12 @@ export default {
     };
   },
   methods: {
+    con() {
+      console.log(this.editTitle);
+      console.log(this.editUrl_video);
+      console.log(this.editDescription);
+      console.log(this.editId);
+    },
     submitEditVideo() {
       fetch(`http://localhost:3000/videos/${this.editId}`, {
         method: "PUT",

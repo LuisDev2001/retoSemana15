@@ -36,12 +36,7 @@
 export default {
   name: "ListVideo",
   data() {
-    return {
-      editTitle: "",
-      editUrl_video: "",
-      editDescription: "",
-      editId: 0,
-    };
+    return {};
   },
   methods: {
     getVideo() {
@@ -59,7 +54,7 @@ export default {
       const card = document.createElement("article");
       card.classList.add("card-video");
 
-      card.innerHTML = `  
+      card.innerHTML = `
             <div class="card-video-img">
               <div class="card-video-actions">
                 <div class="edit-btn">
@@ -107,7 +102,7 @@ export default {
       };
       //Detail Video
       card.querySelector(".card-video-detail").onclik = () => {
-        this.$router.push(`/Detail/${video.id}`);
+        this.$router.push(`/DetailVideo/${video.id}`);
         this.detailTitle = video.title;
         this.detailUrl_video = video.url_video;
         this.detailDescription = video.description;
@@ -115,8 +110,8 @@ export default {
       };
       //Edit video
       card.querySelector(".edit-btn").onclick = () => {
-        this.$router.push(`/EditVideo/${video.id}`);
         this.editVideo(video);
+        this.$router.push(`/EditVideo/${video.id}`);
       };
       return card;
     },
