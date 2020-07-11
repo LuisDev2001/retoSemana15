@@ -79,6 +79,15 @@ export default {
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: auto;
   grid-gap: 1rem;
+  @media screen and (max-width: 992px){
+    grid-template-columns: repeat(3, 1fr);
+  }
+  @media screen and (max-width: 768px){
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media screen and (max-width: 420px){
+    grid-template-columns: 1fr;
+  }
 }
 /* Card styles */
 .card-video {
