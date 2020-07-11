@@ -36,7 +36,12 @@
 export default {
   name: "ListVideo",
   data() {
-    return {};
+    return {
+      editTitle: "",
+      editUrl_video: "",
+      editDescription: "",
+      editId: 0,
+    };
   },
   methods: {
     getVideo() {
@@ -73,13 +78,12 @@ export default {
               <h3 class="card-video-title">${title}</h3>
               <span class="card-video-view">${id} visualizaciones</span>
               <p class="card-video-description">${description}</p>
-              <a href="#" class="card-video-detail">
+              <div class="card-video-detail">
                 Ver detalle
-              </a>
+              </div>
             </div>
         `;
       //Eliminar card de la bd
-
       card.querySelector(".delete-btn").onclick = () => {
         const modalDelete = document.querySelector(".gray-out");
         const closeIconModal = document.querySelector(
@@ -101,6 +105,19 @@ export default {
           modalDelete.classList.remove("active");
         });
       };
+      //Detail Video
+      card.querySelector(".card-video-detail").onclik = () => {
+        this.$router.push(`/Detail/${video.id}`);
+        this.detailTitle = video.title;
+        this.detailUrl_video = video.url_video;
+        this.detailDescription = video.description;
+        this.editId = video.id;
+      };
+      //Edit video
+      card.querySelector(".edit-btn").onclick = () => {
+        this.$router.push(`/EditVideo/${video.id}`);
+        this.editVideo(video);
+      };
       return card;
     },
     insertCard(card) {
@@ -111,6 +128,12 @@ export default {
       fetch(`http://localhost:3000/videos/${video.id}`, {
         method: "DELETE",
       });
+    },
+    editVideo(video) {
+      this.editTitle = video.title;
+      this.editUrl_video = video.url_video;
+      this.editDescription = video.description;
+      this.editId = video.id;
     },
   },
 };
@@ -189,6 +212,7 @@ export default {
     margin: 0 0 6px 0;
   }
   &-detail {
+    cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;

@@ -53,7 +53,7 @@ export default {
       editTitle: "",
       editUrl_video: "",
       editDescription: "",
-      editId: 0
+      editId: 0,
     };
   },
   methods: {
@@ -63,21 +63,21 @@ export default {
         body: JSON.stringify({
           title: this.editTitle,
           url_video: this.editUrl_video,
-          description: this.editDescription
+          description: this.editDescription,
         }),
         headers: {
-          "Content-type": "application/json; charset=UTF-8"
-        }
+          "Content-type": "application/json; charset=UTF-8",
+        },
       })
-        .then(response => {
+        .then((response) => {
           return response.json();
         })
-        .then(videoEdited => {
+        .then((videoEdited) => {
           return console.log(videoEdited);
         });
       this.$router.push("/");
-    }
-  }
+    },
+  },
 };
 </script>
 

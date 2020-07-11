@@ -8,30 +8,30 @@ const routes = [
     path: "/",
     name: "ListVideo",
     component: () =>
-      import(/* webpackChunkName: "ListVideo" */ "../views/ListVideo.vue")
+      import(/* webpackChunkName: "ListVideo" */ "../views/ListVideo.vue"),
   },
   {
     path: "/AddVideo",
     name: "AddVideo",
     component: () =>
-      import(/* webpackChunkName: "AddVideo" */ "../views/AddVideo.vue")
+      import(/* webpackChunkName: "AddVideo" */ "../views/AddVideo.vue"),
   },
   {
     path: "/DetailVideo",
     name: "DetailVideo",
     component: () =>
-      import(/* webpackChunkName: "AddVideo" */ "../views/DetailVideo.vue")
+      import(/* webpackChunkName: "DetailVideo" */ "../views/DetailVideo.vue"),
   },
   {
     path: "/EditVideo/:id",
     name: "EditVideo",
     component: () =>
-      import(/* webpackChunkName: "AddVideo" */ "../views/EditVideo.vue")
-  }
+      import(/* webpackChunkName: "EditVideo" */ "../views/EditVideo.vue"),
+  },
 ];
 
 const router = new VueRouter({
-  routes
+  routes,
 });
 
 export default router;
