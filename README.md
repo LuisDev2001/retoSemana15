@@ -15,6 +15,8 @@
   
 Describan el proceso en el ambito de front para realizar un buen login, y que pasa atras, que se hace ? 
 ¿Como se realiza un login, en el ambito de front?
+  Primero para realizar un login en el ambito de front debemos validar que los datos que seran ingresados en nuestro formulario de login seran correctos, que el usuario ingrese sus credenciales correctamente, una vez que el usuario halla dado click en el boton de 'login', los datos ingresados nosotros haremos la validacion si el usuario y contraseña son correctos.
+  Por detras se hace la validacion de los datos ingresados (consulta) a la base de datos y si es correcto pues lo redireccionara a la pagina de inicio.
 
 ## Project setup
 ```
