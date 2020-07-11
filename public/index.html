@@ -1,17 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
-    <title><%= htmlWebpackPlugin.options.title %></title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="icon" href="<%= BASE_URL %>favicon.ico" />
+    <title>Pacha Video</title>
+    <style>
+      :root {
+        /*Fuente*/
+        --font-roboto: "Roboto", sans-serif;
+        --primary-color: #ff5252;
+        --white-color: #ffffff;
+        --gray-color: #c4c4c4;
+        --color-btn: #00c1aa;
+        --color-black3: #303030;
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+      
+      html {
+        font-family: var(--font-roboto);
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      ul,
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+      }
+
+      img {
+        display: block;
+      }
+
+      a {
+        text-decoration: none;
+      }
+    </style>
   </head>
   <body>
     <noscript>
-      <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+      <strong>
+        We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work
+        properly without JavaScript enabled. Please enable it to continue.
+      </strong>
     </noscript>
     <div id="app"></div>
     <!-- built files will be auto injected -->
+    <script
+      src="https://kit.fontawesome.com/b7301c403c.js"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>
